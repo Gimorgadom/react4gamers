@@ -13,7 +13,7 @@ const Chest = () => {
                 backgroundRepeat: 'no-repeat',
                 animation: 'chest-animation 1s steps(3) infinite',
                 position: 'absolute',
-                bottom: TILE_SIZE * 4,
+                top: TILE_SIZE * 4,
                 left: TILE_SIZE * 9, 
             }} 
         />
