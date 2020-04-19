@@ -4,22 +4,30 @@ import { TILE_SIZE, EDirection } from '../settings/constants';
 import './index.css';
 import useEnemyMoviment from '../../hooks/useEnemyMoviment';
 
-const MiniDemon = () => {
+// const moviment = {
+//     position: { x: 5, y: 5 },
+//     direction: EDirection.RIGHT,
+// };
 
-    const { position, direction } = useEnemyMoviment({ x: 10, y: 10 });
+interface IProps {
+    initialPosition: { x: number, y: number }
+};
+
+const MiniDemon = (props: IProps) => {
+    const moviment = useEnemyMoviment(props.initialPosition);
 
     return (
         <div
             style={{
                 position: 'absolute',
-                bottom: TILE_SIZE * position.y,
-                left: TILE_SIZE * position.x, 
+                top: TILE_SIZE * moviment.position.y,
+                left: TILE_SIZE * moviment.position.x, 
                 width: TILE_SIZE,
                 height: 100,
                 backgroundImage: "url(./assets/MINI-DEMON.png)",
                 backgroundRepeat: 'no-repeat',
                 animation: 'mini-demon-animation 1s steps(4) infinite',
-                transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`,
+                transform: `scaleX(${moviment.direction === EDirection.RIGHT ? 1 : -1})`,
             }} 
         />
     );
