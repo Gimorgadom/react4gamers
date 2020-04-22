@@ -1,5 +1,5 @@
 import React from 'react';
-import { TILE_SIZE, EDirection } from '../settings/constants';
+import { TILE_SIZE, EDirection, HEAD_OFFSET } from '../settings/constants';
 
 import './index.css';
 import useEnemyMoviment from '../../hooks/useEnemyMoviment';
@@ -20,7 +20,7 @@ const MiniDemon = (props: IProps) => {
         <div
             style={{
                 position: 'absolute',
-                top: TILE_SIZE * moviment.position.y,
+                top: TILE_SIZE * moviment.position.y - HEAD_OFFSET,
                 left: TILE_SIZE * moviment.position.x, 
                 width: TILE_SIZE,
                 height: 100,
