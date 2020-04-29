@@ -1,5 +1,4 @@
 import { EDirection, EWalker } from "../../components/settings/constants";
-import React from "react";
 
 export function handleNextPosition(direction, position) {
     switch(direction) {

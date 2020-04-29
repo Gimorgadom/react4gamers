@@ -1,6 +1,5 @@
 import React from 'react';
 import { TILE_SIZE } from '../../settings/constants';
-import { render } from '@testing-library/react';
 import { ECanvas } from '../../../contexts/canvas/helpers';
 
 interface IProps {

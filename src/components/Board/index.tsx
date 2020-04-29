@@ -52,7 +52,6 @@ const elements = getCanvasMap();
 
 const Board = () => {
     const chestsContext = React.useContext(ChestsContext);
-        console.log(elements);
 
     function renderOpenedDoor() {
         return (

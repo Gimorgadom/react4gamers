@@ -1,4 +1,3 @@
-import useEventListener from '@use-it/event-listener';
 import React from 'react';
 import { TILE_SIZE, EDirection, HEAD_OFFSET } from '../settings/constants';
 
@@ -11,8 +10,7 @@ interface IProps {
 
 const Hero = (props: IProps) => {
     const { position, direction, step } = useHeroMoviment(props.initialPosition);
-    console.log(step);
-    
+        
     return (
         <div>
             <div
