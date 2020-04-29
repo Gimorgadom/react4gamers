@@ -14,7 +14,7 @@ function App() {
           height: GAME_SIZE,
         }}
       >
-        <Game />
+        <Game/>
       </div>
     </div>
   );

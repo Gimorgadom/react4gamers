@@ -6,28 +6,35 @@ import './index.css';
 import useHeroMoviment from '../../hooks/useHeroMoviment';
 
 interface IProps {
-    initialPosition: { x: number; y: number }
+    initialPosition: { x: number; y: number },
 }
 
 const Hero = (props: IProps) => {
-    const { position, direction } = useHeroMoviment(props.initialPosition);
+    const { position, direction, step } = useHeroMoviment(props.initialPosition);
+    console.log(step);
     
     return (
-        <div
-            style={{
-                position: 'absolute',
-                top: TILE_SIZE * position.y - HEAD_OFFSET,
-                left: TILE_SIZE * position.x, 
-                width: TILE_SIZE,
-                height: 100,
-                backgroundImage: "url(./assets/HERO.png)",
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: `0 ${TILE_SIZE - HEAD_OFFSET}px`,
-                animation: 'hero-animation 1s steps(4) infinite',
-                transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`,
-                zIndex: 1,
-            }} 
-        />
+        <div>
+            <div
+                style={{
+                    position: 'absolute',
+                    top: TILE_SIZE * position.y - HEAD_OFFSET,
+                    left: TILE_SIZE * position.x, 
+                    width: TILE_SIZE,
+                    height: 100,
+                    backgroundImage: "url(./assets/HERO.png)",
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: `0 ${TILE_SIZE - HEAD_OFFSET}px`,
+                    animation: 'hero-animation 1s steps(4) infinite',
+                    transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`,
+                    zIndex: 1,
+                }} 
+            />
+            <div className='steps'>
+                {step} passos
+            </div>
+        </div>
+        
     );
 }
 

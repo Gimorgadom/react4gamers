@@ -7,3 +7,16 @@
         background-position-x: -192px;
     }
 }
+
+.steps {
+    color: coral;
+    position: absolute;
+    font-size: 30px;
+    font-family: cursive;
+    left: -192px;
+    top: 95px;
+    font-style: oblique;
+    font-weight: bold;
+    font-variant: petite-caps;
+    border-bottom: double;
+}

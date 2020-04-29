@@ -4,11 +4,12 @@ import Debugger from './Debugger';
 import Board from './Board';
 import ChestsProvider from '../contexts/chests';
 
+
 function Game() {
     return (
         <CanvasProvider>
           <ChestsProvider>
-            <Debugger />
+            {false && <Debugger />}
             <Board />
           </ChestsProvider>
         </CanvasProvider>

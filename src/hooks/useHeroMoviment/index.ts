@@ -10,7 +10,7 @@ function useHeroMoviment(initialPosition) {
 
     const [positionState, updatePositionState] = React.useState(initialPosition);
     const [direction, updateDirectionState] = React.useState(EDirection.RIGHT);
-
+    const [step, updateStepState] = React.useState(50);
      
 
     useEventListener('keydown', (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -25,12 +25,18 @@ function useHeroMoviment(initialPosition) {
         if (moviment.nextMove.valid) {
             updatePositionState(moviment.nextPosition);
             updateDirectionState(direction);
+            updateStepState((step) => step-1);
         }
 
         if (moviment.nextMove.dead) {
             setTimeout(() => {
                 alert('Você morreu');
             })
+            window.location.reload();
+        }
+
+        if (step === 0) {
+            alert('Seus movimentos acabaram!');
             window.location.reload();
         }
 
@@ -45,9 +51,10 @@ function useHeroMoviment(initialPosition) {
 
     });
 
-    return {
+   return {
         position: positionState,
         direction: direction,
+        step: step
     }
 
 }

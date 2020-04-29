@@ -8,6 +8,7 @@ import Trap from '../Trap';
 import { canvas, ECanvas } from '../../contexts/canvas/helpers';
 import { ChestsContext } from '../../contexts/chests';
 
+
 function getCanvasMap() {
     const array = [];
 
@@ -48,8 +49,10 @@ function getCanvasMap() {
 }
 
 const elements = getCanvasMap();
+
 const Board = () => {
     const chestsContext = React.useContext(ChestsContext);
+        console.log(elements);
 
     function renderOpenedDoor() {
         return (
